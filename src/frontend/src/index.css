@@ -1,0 +1,136 @@
+@font-face {
+  font-family: "DMSerifDisplay";
+  src: url("/assets/fonts/DMSerifDisplay.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PlusJakartaSans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0.97 0.006 220;
+    --foreground: 0.18 0.02 230;
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.02 230;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.02 230;
+    --primary: 0.55 0.155 195;
+    --primary-foreground: 0.98 0 0;
+    --secondary: 0.93 0.02 215;
+    --secondary-foreground: 0.28 0.03 220;
+    --muted: 0.93 0.015 215;
+    --muted-foreground: 0.52 0.04 220;
+    --accent: 0.78 0.14 80;
+    --accent-foreground: 0.18 0.02 230;
+    --destructive: 0.58 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.88 0.02 215;
+    --input: 0.88 0.02 215;
+    --ring: 0.55 0.155 195;
+    --radius: 0.75rem;
+    --chart-1: 0.55 0.155 195;
+    --chart-2: 0.68 0.14 170;
+    --chart-3: 0.78 0.14 80;
+    --chart-4: 0.65 0.18 280;
+    --chart-5: 0.58 0.22 25;
+    --sidebar: 0.97 0.006 220;
+    --sidebar-foreground: 0.18 0.02 230;
+    --sidebar-primary: 0.55 0.155 195;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.93 0.02 215;
+    --sidebar-accent-foreground: 0.28 0.03 220;
+    --sidebar-border: 0.88 0.02 215;
+    --sidebar-ring: 0.55 0.155 195;
+  }
+
+  .dark {
+    --background: 0.13 0.02 230;
+    --foreground: 0.94 0.01 220;
+    --card: 0.18 0.025 228;
+    --card-foreground: 0.94 0.01 220;
+    --popover: 0.18 0.025 228;
+    --popover-foreground: 0.94 0.01 220;
+    --primary: 0.62 0.155 195;
+    --primary-foreground: 0.1 0.02 230;
+    --secondary: 0.22 0.03 225;
+    --secondary-foreground: 0.88 0.015 220;
+    --muted: 0.22 0.025 225;
+    --muted-foreground: 0.62 0.04 220;
+    --accent: 0.78 0.14 80;
+    --accent-foreground: 0.1 0.02 230;
+    --destructive: 0.62 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.26 0.03 225;
+    --input: 0.26 0.03 225;
+    --ring: 0.62 0.155 195;
+    --chart-1: 0.62 0.155 195;
+    --chart-2: 0.72 0.14 170;
+    --chart-3: 0.78 0.14 80;
+    --chart-4: 0.68 0.18 280;
+    --chart-5: 0.65 0.22 25;
+    --sidebar: 0.16 0.022 228;
+    --sidebar-foreground: 0.94 0.01 220;
+    --sidebar-primary: 0.62 0.155 195;
+    --sidebar-primary-foreground: 0.1 0.02 230;
+    --sidebar-accent: 0.22 0.03 225;
+    --sidebar-accent-foreground: 0.88 0.015 220;
+    --sidebar-border: 0.26 0.03 225;
+    --sidebar-ring: 0.62 0.155 195;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "PlusJakartaSans", sans-serif;
+  }
+  html {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+}
+
+@layer utilities {
+  .mobile-container {
+    @apply max-w-[480px] mx-auto min-h-screen relative;
+  }
+  .gradient-primary {
+    background: linear-gradient(
+      135deg,
+      oklch(0.55 0.155 195),
+      oklch(0.48 0.14 210)
+    );
+  }
+  .dark .gradient-primary {
+    background: linear-gradient(
+      135deg,
+      oklch(0.42 0.155 195),
+      oklch(0.35 0.14 210)
+    );
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
